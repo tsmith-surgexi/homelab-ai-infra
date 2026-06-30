@@ -1,0 +1,39 @@
+# Inference stack — model servers behind one OpenAI-compatible gateway.
+# Placeholders only: no real images, hostnames, model names, or keys.
+# Copy alongside a .env (gitignored) that supplies the ${...} values.
+services:
+  gateway:
+    image: ghcr.io/example/inference-gateway:latest   # TODO: your gateway image
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:8080:8080"      # bind to loopback; expose only via the proxy
+    environment:
+      - UPSTREAM_A=http://model-a:8000/v1
+      - UPSTREAM_B=http://model-b:8000/v1
+    depends_on: [model-a, model-b]
+
+  model-a:
+    image: ghcr.io/example/model-server:latest         # TODO: your serving image
+    restart: unless-stopped
+    environment:
+      - MODEL_NAME=${MODEL_A_NAME}                      # placeholder
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              device_ids: ["0"]                          # GPU 0
+              capabilities: [gpu]
+
+  model-b:
+    image: ghcr.io/example/model-server:latest
+    restart: unless-stopped
+    environment:
+      - MODEL_NAME=${MODEL_B_NAME}
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              device_ids: ["1"]                          # GPU 1
+              capabilities: [gpu]
