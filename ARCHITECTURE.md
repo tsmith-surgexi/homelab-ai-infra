@@ -1,3 +1,4 @@
+<!-- Copyright © 2026 SurgeXi Business Intelligence, a Teamsmith Enterprises LLC company. All Rights Reserved. -->
 # Architecture & Case Study — On-Prem GPU Inference Infrastructure
 
 > How I run production-grade AI inference on owned hardware instead of renting

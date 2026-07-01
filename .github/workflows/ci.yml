@@ -1,3 +1,4 @@
+# Copyright © 2026 SurgeXi Business Intelligence, a Teamsmith Enterprises LLC company. All Rights Reserved.
 # This is an infra/IaC repo (shell + compose), so CI = shellcheck + compose validate.
 name: ci
 on:

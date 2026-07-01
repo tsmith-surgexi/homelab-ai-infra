@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# Copyright © 2026 SurgeXi Business Intelligence, a Teamsmith Enterprises LLC company. All Rights Reserved.
 # Host provisioning for an on-prem GPU inference node.
 # Reference scaffold — review every step before running on real hardware.
 # Placeholders only: no real hosts, keys, or model names.

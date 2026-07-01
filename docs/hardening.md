@@ -1,3 +1,4 @@
+<!-- Copyright © 2026 SurgeXi Business Intelligence, a Teamsmith Enterprises LLC company. All Rights Reserved. -->
 # Hardening baseline
 
 Even a homelab gets treated like production. This is the baseline posture the

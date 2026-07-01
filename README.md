@@ -1,3 +1,4 @@
+<!-- Copyright © 2026 SurgeXi Business Intelligence, a Teamsmith Enterprises LLC company. All Rights Reserved. -->
 # 🖥️ homelab-ai-infra
 
 > Infrastructure-as-code and operational docs for a **self-hosted, on-prem GPU inference rig** — private model serving, monitoring, and reproducible deployment on real hardware.
@@ -80,9 +81,6 @@ flows, design-decision records (ADRs), and trade-offs — see
 **[ARCHITECTURE.md](ARCHITECTURE.md)** and the [ADRs](docs/adr/).
 
 ## License
+© 2026 SurgeXi Business Intelligence, a Teamsmith Enterprises LLC company. All Rights Reserved.
+Source-available for evaluation only — see LICENSE.
 
-MIT — see [LICENSE](LICENSE).
-
----
-
-*Part of my AI‑platform work — see my other [pinned repositories](https://github.com/tsmith-surgexi) and the platform they support at [SurgeXi](https://surgexi.com).*
