@@ -2,6 +2,10 @@
 
 > Infrastructure-as-code and operational docs for a **self-hosted, on-prem GPU inference rig** — private model serving, monitoring, and reproducible deployment on real hardware.
 
+[![ci](https://github.com/tsmith-surgexi/homelab-ai-infra/actions/workflows/ci.yml/badge.svg)](https://github.com/tsmith-surgexi/homelab-ai-infra/actions/workflows/ci.yml)
+[![license: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![shellcheck](https://img.shields.io/badge/lint-shellcheck-informational.svg)](.github/workflows/ci.yml)
+
 This repo documents how I run **production-grade AI inference on my own iron** instead of renting it. It's the foundation a serious AI platform sits on: low-latency, private, and fully under your control. Shareable because it's *how* I run infrastructure — the models and data that run on it stay private.
 
 ---
@@ -78,3 +82,7 @@ flows, design-decision records (ADRs), and trade-offs — see
 ## License
 
 MIT — see [LICENSE](LICENSE).
+
+---
+
+*Part of my AI‑platform work — see my other [pinned repositories](https://github.com/tsmith-surgexi) and the platform they support at [SurgeXi](https://surgexi.com).*

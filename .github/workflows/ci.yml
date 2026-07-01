@@ -1,0 +1,28 @@
+# This is an infra/IaC repo (shell + compose), so CI = shellcheck + compose validate.
+name: ci
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: ShellCheck provisioning scripts
+        uses: ludeeus/action-shellcheck@master
+        with:
+          scandir: ./provisioning
+      - name: Validate Docker Compose files
+        # Supply dummy values for the ${...} placeholders so validation is
+        # about YAML/schema correctness, not real secrets.
+        env:
+          MODEL_A_NAME: placeholder
+          MODEL_B_NAME: placeholder
+        run: |
+          for f in compose/*.yaml; do
+            echo "Validating $f"
+            docker compose -f "$f" config -q
+          done
