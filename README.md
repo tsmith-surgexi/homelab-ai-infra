@@ -1,9 +1,9 @@
 <!-- Copyright © 2026 SurgeXi Business Intelligence, a Teamsmith Enterprises LLC company. All Rights Reserved. -->
-# 🖥️ homelab-ai-infra
+# 🖥️ onprem-ai-infra
 
 > Infrastructure-as-code and operational docs for a **self-hosted, on-prem GPU inference rig** — private model serving, monitoring, and reproducible deployment on real hardware.
 
-[![ci](https://github.com/tsmith-surgexi/homelab-ai-infra/actions/workflows/ci.yml/badge.svg)](https://github.com/tsmith-surgexi/homelab-ai-infra/actions/workflows/ci.yml)
+[![ci](https://github.com/tsmith-surgexi/onprem-ai-infra/actions/workflows/ci.yml/badge.svg)](https://github.com/tsmith-surgexi/onprem-ai-infra/actions/workflows/ci.yml)
 [![license: source-available](https://img.shields.io/badge/license-source--available-blue.svg)](LICENSE)
 [![shellcheck](https://img.shields.io/badge/lint-shellcheck-informational.svg)](.github/workflows/ci.yml)
 
@@ -16,7 +16,7 @@ This repo documents how I run **production-grade AI inference on my own iron** i
 | Component | Role |
 |-----------|------|
 | Workstation-class host (dual-GPU) | Primary inference — large local models |
-| Edge compute node | Low-power on-site / airborne inference |
+| Edge compute node | Low-power on-site edge inference |
 | Containerized model servers | OpenAI-compatible serving behind one gateway |
 | Reverse proxy + TLS | Single secure entry point |
 | Monitoring stack | GPU utilization, latency, and health dashboards |
@@ -55,8 +55,8 @@ flowchart TD
 ## Quick start
 
 ```bash
-git clone https://github.com/tsmith-surgexi/homelab-ai-infra.git
-cd homelab-ai-infra
+git clone https://github.com/tsmith-surgexi/onprem-ai-infra.git
+cd onprem-ai-infra
 # 1. Provision the host (drivers, runtime, hardening)
 sudo ./provisioning/setup.sh
 # 2. Bring up the inference + monitoring stack
@@ -66,7 +66,7 @@ docker compose -f compose/monitoring.yaml up -d
 
 ## Hardening baseline
 
-Even a homelab gets treated like production: least-privilege service accounts, no model server exposed directly to the internet, TLS at the edge, and a single authenticated gateway in front of every model. Full notes in [`docs/hardening.md`](docs/hardening.md).
+Even a private rig gets treated like production: least-privilege service accounts, no model server exposed directly to the internet, TLS at the edge, and a single authenticated gateway in front of every model. Full notes in [`docs/hardening.md`](docs/hardening.md).
 
 ## Roadmap
 
